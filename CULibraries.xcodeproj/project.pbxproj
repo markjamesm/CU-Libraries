@@ -7,17 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC3D6C5923F617080046F796 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D6C5823F617080046F796 /* HeaderView.swift */; };
+		EC3D6C5B23F6188B0046F796 /* OccupancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D6C5A23F6188B0046F796 /* OccupancyView.swift */; };
+		EC3D6C5D23F63D530046F796 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D6C5C23F63D530046F796 /* ImageView.swift */; };
+		EC3D6C6023F642460046F796 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EC3D6C5F23F642460046F796 /* README.md */; };
 		ECAC4E6823F0A3BB001C2DD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC4E6723F0A3BB001C2DD5 /* AppDelegate.swift */; };
 		ECAC4E6A23F0A3BB001C2DD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC4E6923F0A3BB001C2DD5 /* SceneDelegate.swift */; };
 		ECAC4E6E23F0A3BD001C2DD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECAC4E6D23F0A3BD001C2DD5 /* Assets.xcassets */; };
 		ECAC4E7123F0A3BD001C2DD5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECAC4E7023F0A3BD001C2DD5 /* Preview Assets.xcassets */; };
 		ECAC4E7423F0A3BD001C2DD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECAC4E7223F0A3BD001C2DD5 /* LaunchScreen.storyboard */; };
 		ECAC4E7C23F0A48D001C2DD5 /* AppLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC4E7B23F0A48D001C2DD5 /* AppLogic.swift */; };
-		ECAC4E8023F0A8E6001C2DD5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC4E7F23F0A8E6001C2DD5 /* SettingsView.swift */; };
+		ECAC4E8023F0A8E6001C2DD5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC4E7F23F0A8E6001C2DD5 /* MainView.swift */; };
 		ECAC4E8223F0FF3F001C2DD5 /* LibraryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC4E8123F0FF3F001C2DD5 /* LibraryData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC3D6C5823F617080046F796 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		EC3D6C5A23F6188B0046F796 /* OccupancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccupancyView.swift; sourceTree = "<group>"; };
+		EC3D6C5C23F63D530046F796 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		EC3D6C5F23F642460046F796 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ECAC4E6423F0A3BB001C2DD5 /* CULibraries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CULibraries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECAC4E6723F0A3BB001C2DD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECAC4E6923F0A3BB001C2DD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,7 +34,7 @@
 		ECAC4E7323F0A3BD001C2DD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECAC4E7523F0A3BD001C2DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECAC4E7B23F0A48D001C2DD5 /* AppLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogic.swift; sourceTree = "<group>"; };
-		ECAC4E7F23F0A8E6001C2DD5 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ECAC4E7F23F0A8E6001C2DD5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		ECAC4E8123F0FF3F001C2DD5 /* LibraryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,15 +68,19 @@
 		ECAC4E6623F0A3BB001C2DD5 /* CULibraries */ = {
 			isa = PBXGroup;
 			children = (
-				ECAC4E6723F0A3BB001C2DD5 /* AppDelegate.swift */,
 				ECAC4E6923F0A3BB001C2DD5 /* SceneDelegate.swift */,
+				ECAC4E7F23F0A8E6001C2DD5 /* MainView.swift */,
+				EC3D6C5C23F63D530046F796 /* ImageView.swift */,
+				EC3D6C5823F617080046F796 /* HeaderView.swift */,
+				EC3D6C5A23F6188B0046F796 /* OccupancyView.swift */,
+				ECAC4E6723F0A3BB001C2DD5 /* AppDelegate.swift */,
 				ECAC4E7B23F0A48D001C2DD5 /* AppLogic.swift */,
 				ECAC4E8123F0FF3F001C2DD5 /* LibraryData.swift */,
-				ECAC4E7F23F0A8E6001C2DD5 /* SettingsView.swift */,
 				ECAC4E6D23F0A3BD001C2DD5 /* Assets.xcassets */,
 				ECAC4E7223F0A3BD001C2DD5 /* LaunchScreen.storyboard */,
 				ECAC4E7523F0A3BD001C2DD5 /* Info.plist */,
 				ECAC4E6F23F0A3BD001C2DD5 /* Preview Content */,
+				EC3D6C5F23F642460046F796 /* README.md */,
 			);
 			path = CULibraries;
 			sourceTree = "<group>";
@@ -141,6 +153,7 @@
 			files = (
 				ECAC4E7423F0A3BD001C2DD5 /* LaunchScreen.storyboard in Resources */,
 				ECAC4E7123F0A3BD001C2DD5 /* Preview Assets.xcassets in Resources */,
+				EC3D6C6023F642460046F796 /* README.md in Resources */,
 				ECAC4E6E23F0A3BD001C2DD5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,7 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECAC4E8023F0A8E6001C2DD5 /* SettingsView.swift in Sources */,
+				EC3D6C5D23F63D530046F796 /* ImageView.swift in Sources */,
+				ECAC4E8023F0A8E6001C2DD5 /* MainView.swift in Sources */,
+				EC3D6C5B23F6188B0046F796 /* OccupancyView.swift in Sources */,
+				EC3D6C5923F617080046F796 /* HeaderView.swift in Sources */,
 				ECAC4E7C23F0A48D001C2DD5 /* AppLogic.swift in Sources */,
 				ECAC4E6823F0A3BB001C2DD5 /* AppDelegate.swift in Sources */,
 				ECAC4E6A23F0A3BB001C2DD5 /* SceneDelegate.swift in Sources */,

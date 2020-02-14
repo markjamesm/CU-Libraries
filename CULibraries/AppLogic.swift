@@ -10,17 +10,19 @@ import Foundation
 
 class AppLogic: ObservableObject {
     
+    //State vartiables to interface with viewcontroller
     @Published var websterOccupancy = " "
     @Published var vanierOccupancy = " "
     @Published var greyNunsOccupancy = " "
 
     func getOccupancyRates() {
         
+      // Build the authentication credentials
       let credential = URLCredential(user: "169", password: "fd896d1fc8a3fcdb8c0d29bab51720e3", persistence: .forSession)
       let protectionSpace = URLProtectionSpace.init(host: "opendata.concordia.ca", port: 443, protocol: "https", realm: "Protected", authenticationMethod: NSURLAuthenticationMethodHTTPBasic)
       URLCredentialStorage.shared.setDefaultCredential(credential, for: protectionSpace)
 
-       
+        // Build the request and get JSON
         let urlString = "https://opendata.concordia.ca/API/v1/library/occupancy/"
         guard let url = URL(string: urlString) else { return }
         
@@ -32,26 +34,23 @@ class AppLogic: ObservableObject {
         guard let data = data else { return }
         do {
 
-        //Decode data
+        //Decode JSON data
         let libraryData = try? JSONDecoder().decode(LibraryData.self, from: data)
-            
-          //  print("This is: \(libraryData?.webster.occupancy)")
-         //   print(data)
-         //   print(response)
-         //   print(error)
-
-            //Get back to the main queue
+        
+            //Get back to the main queue so we can publish our observable variables to view
             DispatchQueue.main.async {
-
-                self.websterOccupancy = libraryData?.webster.occupancy as! String
-                self.vanierOccupancy = libraryData?.vanier.occupancy as! String
-                self.greyNunsOccupancy = libraryData?.greyNuns.occupancy as! String
+                
+                // Write library occupancies to published variables so we can display them in our view
+                self.websterOccupancy = libraryData?.webster.occupancy ?? "0"
+                self.vanierOccupancy = libraryData?.vanier.occupancy ?? "0"
+                self.greyNunsOccupancy = libraryData?.greyNuns.occupancy ?? "0"
                 
             }
-
+            
         } catch let jsonError {
             print(jsonError)
         }
+            
         }.resume()
     }
 }
