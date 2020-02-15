@@ -13,26 +13,60 @@ struct OccupancyView: View {
     @EnvironmentObject var applogic: AppLogic
     
     var body: some View {
-        VStack(alignment: .leading) {
+       
+        VStack {
         
-            HStack() {
-                Text("Webster Library:")
-                    .font(.body)
-            Spacer()
+            VStack(alignment: .leading) {
+        
+            HStack {
+                Text("Webster Library")
+                    .font(.headline)
+                    .foregroundColor(Color.white)
+                Spacer()
                 Text("\(self.applogic.websterOccupancy)")
-                    .font(.body)
+                    .font(.headline)
+                    .padding()
                 Spacer()
             }
-            
+            .padding()
+            .background(Color.init(.systemBlue))
+            .cornerRadius(20, corners: [.topLeft, .topRight])
+        //    .cornerRadius(30)
+        //    Divider()
             HStack {
-                Text("Vanier Library:")
-                    .font(.body)
+                Text("Vanier Library")
+                    .font(.headline)
+                    .foregroundColor(Color.white)
                 Spacer()
                 Text("\(self.applogic.vanierOccupancy)")
-                    .font(.body)
+                    .font(.headline)
+                    .padding()
                 Spacer()
             }
-        }.padding()
+            .padding()
+            .background(Color.init(.systemGreen))
+          //  .cornerRadius(30)
+            .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
+            
+            Spacer()
+            
+            VStack {
+                HStack {
+                      Text("Last Updated")
+                          .font(.body)
+                          .foregroundColor(Color.white)
+                      Spacer()
+                       Text("\(self.applogic.time)")
+                          .padding()
+                      Spacer()
+                  }
+                  .padding()
+                  .background(Color.init(.systemBlue))
+                .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
+            }
+            
+        }
+    }
     }
 }
 

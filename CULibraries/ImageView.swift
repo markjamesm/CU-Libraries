@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ImageView: View {
     var body: some View {
+        VStack {
         HStack {
         Image("webster-library")
             .resizable()
@@ -20,7 +21,9 @@ struct ImageView: View {
             .cornerRadius(12)
             
         }
-    }
+        }
+}
+    
 }
 
 struct ImageView_Previews: PreviewProvider {

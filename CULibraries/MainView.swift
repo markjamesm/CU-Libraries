@@ -17,13 +17,9 @@ struct ContentView: View {
     var body: some View {
         VStack() {
             HeaderView()
-            VStack() {
-            ImageView()
-            OccupancyView()
-                }.padding()
-        .onAppear {
+            .onAppear {
             self.applogic.getOccupancyRates()
-        }
+            }
         }
     }
 }

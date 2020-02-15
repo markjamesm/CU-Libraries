@@ -14,6 +14,7 @@ class AppLogic: ObservableObject {
     @Published var websterOccupancy = " "
     @Published var vanierOccupancy = " "
     @Published var greyNunsOccupancy = " "
+    @Published var time = " "
 
     func getOccupancyRates() {
         
@@ -45,6 +46,9 @@ class AppLogic: ObservableObject {
                 self.vanierOccupancy = libraryData?.vanier.occupancy ?? "0"
                 self.greyNunsOccupancy = libraryData?.greyNuns.occupancy ?? "0"
                 
+                // Call our function to set the time the API was last called
+                self.lastApiTime()
+                
             }
             
         } catch let jsonError {
@@ -53,4 +57,14 @@ class AppLogic: ObservableObject {
             
         }.resume()
     }
+    
+    func lastApiTime() {
+        
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "HH:mm:ss"
+        self.time = format.string(from: date)
+        
+    }
+    
 }
