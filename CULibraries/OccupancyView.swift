@@ -33,70 +33,37 @@ struct OccupancyView: View {
         
             VStack(alignment: .leading) {
         
+          //  Spacer()
             HStack {
                 Text("Webster Library")
-                    .font(.headline)
+                    .font(.body)
                     .foregroundColor(Color.white)
                 Spacer()
-                Text("\(self.applogic.websterOccupancy) people in the library")
-                    .font(.headline)
+                Text("\(self.applogic.websterOccupancy) people")
+                    .font(.body)
                     .padding()
                 Spacer()
             }
             .padding()
             .background(Color.init(.systemBlue))
-            .cornerRadius(20, corners: [.topLeft, .topRight])
-
+            .cornerRadius(20)
+            Spacer()
             HStack {
                 Text("Vanier Library ")
-                    .font(.headline)
+                    .font(.body)
                     .foregroundColor(Color.white)
                 Spacer()
-                Text("\(self.applogic.vanierOccupancy) people in the library")
-                    .font(.headline)
+                Text("\(self.applogic.vanierOccupancy) people")
+                    .font(.body)
                     .padding()
                 Spacer()
             }
             .padding()
             .background(Color.init(.systemGreen))
-            .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
+            .cornerRadius(20)
             
             Spacer()
-                
-            VStack {
-                Spacer()
-                FactView()
-                Spacer()
-                
-            }
             
-            VStack {
-                HStack {
-                    Text("Last Updated")
-                        .font(.subheadline)
-                        .foregroundColor(Color(.systemGray6))
-                    Spacer()
-                    Text("\(self.applogic.time)")
-                        .font(.subheadline)
-                        .foregroundColor(Color(.systemGray6))
-                        .padding()
-                    Spacer()
-                    
-                    Button(action: {
-                        
-                        self.applogic.getOccupancyRates()
-                        
-                    }) {
-                        Text("Refresh")
-                            .font(.body)
-                            .foregroundColor(Color(.systemTeal))
-                        
-                    }
-                  }
-                  .padding()
-                  .background(Color.init(.systemBlue))
-                .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
-            }
             }
         }
     }

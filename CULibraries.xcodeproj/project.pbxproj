@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC3D6C5923F617080046F796 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D6C5823F617080046F796 /* HeaderView.swift */; };
+		EC22EC3223F8B32B0052C77D /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22EC3123F8B32B0052C77D /* FooterView.swift */; };
+		EC3D6C5923F617080046F796 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D6C5823F617080046F796 /* DashboardView.swift */; };
 		EC3D6C5B23F6188B0046F796 /* OccupancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D6C5A23F6188B0046F796 /* OccupancyView.swift */; };
 		EC3D6C5D23F63D530046F796 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D6C5C23F63D530046F796 /* ImageView.swift */; };
 		EC3D6C6023F642460046F796 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EC3D6C5F23F642460046F796 /* README.md */; };
 		EC3D6C6323F76B0E0046F796 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = EC3D6C6223F76B0E0046F796 /* .gitignore */; };
-		EC3D6C6523F7A5DF0046F796 /* FactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D6C6423F7A5DF0046F796 /* FactView.swift */; };
+		EC3D6C6523F7A5DF0046F796 /* AvailabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D6C6423F7A5DF0046F796 /* AvailabilityView.swift */; };
+		EC8A4D6623F8A8FD008EB149 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A4D6523F8A8FD008EB149 /* HeaderView.swift */; };
 		ECAC4E6823F0A3BB001C2DD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC4E6723F0A3BB001C2DD5 /* AppDelegate.swift */; };
 		ECAC4E6A23F0A3BB001C2DD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC4E6923F0A3BB001C2DD5 /* SceneDelegate.swift */; };
 		ECAC4E6E23F0A3BD001C2DD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECAC4E6D23F0A3BD001C2DD5 /* Assets.xcassets */; };
@@ -24,12 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC3D6C5823F617080046F796 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		EC22EC3123F8B32B0052C77D /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		EC3D6C5823F617080046F796 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		EC3D6C5A23F6188B0046F796 /* OccupancyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OccupancyView.swift; sourceTree = "<group>"; };
 		EC3D6C5C23F63D530046F796 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		EC3D6C5F23F642460046F796 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EC3D6C6223F76B0E0046F796 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		EC3D6C6423F7A5DF0046F796 /* FactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactView.swift; sourceTree = "<group>"; };
+		EC3D6C6423F7A5DF0046F796 /* AvailabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailabilityView.swift; sourceTree = "<group>"; };
+		EC8A4D6523F8A8FD008EB149 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		ECAC4E6423F0A3BB001C2DD5 /* CULibraries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CULibraries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECAC4E6723F0A3BB001C2DD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECAC4E6923F0A3BB001C2DD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,12 +79,14 @@
 			isa = PBXGroup;
 			children = (
 				ECAC4E7F23F0A8E6001C2DD5 /* MainView.swift */,
-				EC3D6C5823F617080046F796 /* HeaderView.swift */,
-				EC3D6C6423F7A5DF0046F796 /* FactView.swift */,
-				EC3D6C5C23F63D530046F796 /* ImageView.swift */,
+				EC3D6C5823F617080046F796 /* DashboardView.swift */,
+				EC3D6C6423F7A5DF0046F796 /* AvailabilityView.swift */,
+				EC22EC3123F8B32B0052C77D /* FooterView.swift */,
+				EC8A4D6523F8A8FD008EB149 /* HeaderView.swift */,
 				EC3D6C5A23F6188B0046F796 /* OccupancyView.swift */,
-				ECAC4E8123F0FF3F001C2DD5 /* LibraryData.swift */,
+				EC3D6C5C23F63D530046F796 /* ImageView.swift */,
 				ECAC4E7B23F0A48D001C2DD5 /* AppLogic.swift */,
+				ECAC4E8123F0FF3F001C2DD5 /* LibraryData.swift */,
 				ECAC4E6923F0A3BB001C2DD5 /* SceneDelegate.swift */,
 				ECAC4E6723F0A3BB001C2DD5 /* AppDelegate.swift */,
 				ECAC4E6D23F0A3BD001C2DD5 /* Assets.xcassets */,
@@ -172,11 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC3D6C6523F7A5DF0046F796 /* FactView.swift in Sources */,
+				EC3D6C6523F7A5DF0046F796 /* AvailabilityView.swift in Sources */,
 				EC3D6C5D23F63D530046F796 /* ImageView.swift in Sources */,
 				ECAC4E8023F0A8E6001C2DD5 /* MainView.swift in Sources */,
 				EC3D6C5B23F6188B0046F796 /* OccupancyView.swift in Sources */,
-				EC3D6C5923F617080046F796 /* HeaderView.swift in Sources */,
+				EC3D6C5923F617080046F796 /* DashboardView.swift in Sources */,
+				EC8A4D6623F8A8FD008EB149 /* HeaderView.swift in Sources */,
+				EC22EC3223F8B32B0052C77D /* FooterView.swift in Sources */,
 				ECAC4E7C23F0A48D001C2DD5 /* AppLogic.swift in Sources */,
 				ECAC4E6823F0A3BB001C2DD5 /* AppDelegate.swift in Sources */,
 				ECAC4E6A23F0A3BB001C2DD5 /* SceneDelegate.swift in Sources */,

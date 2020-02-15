@@ -31,11 +31,27 @@ struct ContentView: View {
     
     var body: some View {
         VStack() {
-            HeaderView()
+                
+                TabView {
+                    DashboardView()
+                        .tabItem {
+                            Image(systemName: "list.dash")
+                            Text("Dashboard")
+                        }
+
+                    AvailabilityView()
+                        .tabItem {
+                            Image(systemName: "desktopcomputer")
+                            Text("Computer Availabilities")
+                        }
+                }
+                
             .onAppear {
             self.applogic.getOccupancyRates()
+                
             }
         }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
