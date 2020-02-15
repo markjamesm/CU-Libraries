@@ -62,16 +62,36 @@ struct OccupancyView: View {
             .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
             
             Spacer()
+                
+            VStack {
+                Spacer()
+                FactView()
+                Spacer()
+                
+            }
             
             VStack {
                 HStack {
                     Text("Last Updated")
                         .font(.subheadline)
-                        .foregroundColor(Color.white)
-                      Spacer()
+                        .foregroundColor(Color(.systemGray6))
+                    Spacer()
                     Text("\(self.applogic.time)")
                         .font(.subheadline)
-                          .padding()
+                        .foregroundColor(Color(.systemGray6))
+                        .padding()
+                    Spacer()
+                    
+                    Button(action: {
+                        
+                        self.applogic.getOccupancyRates()
+                        
+                    }) {
+                        Text("Refresh")
+                            .font(.body)
+                            .foregroundColor(Color(.systemTeal))
+                        
+                    }
                   }
                   .padding()
                   .background(Color.init(.systemBlue))

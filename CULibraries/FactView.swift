@@ -1,5 +1,5 @@
 /*
-ImageView.swift
+FactView.swift
 
 CULibraries, an app to see the current occupancy of the Concordia University libraries in Montreal, Quebec.
 
@@ -23,24 +23,23 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import SwiftUI
 
-struct ImageView: View {
+struct FactView: View {
     var body: some View {
         VStack {
-            HStack {
+            VStack(alignment: .leading) {
+                HStack {
                 Spacer()
-                Image("book-icon")
-                .resizable()
-                .scaledToFit()
-                    .padding()
-                    .shadow(radius: 10)
+                    Text("Random facts about the University will be displayed here.")
+                        .padding()
                 Spacer()
+                }
             }
         }
-    }
 }
 
-struct ImageView_Previews: PreviewProvider {
+struct FactView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView()
+        FactView()
     }
+}
 }

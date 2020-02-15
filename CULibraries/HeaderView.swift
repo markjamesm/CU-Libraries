@@ -23,6 +23,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import SwiftUI
 
+// This extension allows us to clip specific corners of shapes rather
+// than all of them at once
+
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
@@ -50,20 +53,10 @@ struct HeaderView: View {
        
         VStack {
         HStack {
-            Text("CU Libraries Occupancy")
+            Text("CU Libraries")
                 .font(.body)
                 .foregroundColor(Color.white)
             Spacer()
-            Button(action: {
-                
-                self.applogic.getOccupancyRates()
-                
-            }) {
-                Text("Refresh")
-                    .font(.body)
-                    .foregroundColor(Color(.blue))
-                
-            }
         }
         .padding()
         .background(Color.init(.systemGreen))
