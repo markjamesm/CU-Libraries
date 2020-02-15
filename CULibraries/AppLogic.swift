@@ -1,10 +1,25 @@
-//
-//  AppLogic.swift
-//  CULibraries
-//
-//  Created by Mark-James McDougall on 2020-02-09.
-//  Copyright © 2020 Cymatica. All rights reserved.
-//
+/*
+AppLogic.swift
+
+CULibraries, an app to see the current occupancy of the Concordia University libraries in Montreal, Quebec.
+
+Created by Mark-James M. using the Concordia Opendata API.
+
+ https://github.com/opendataConcordiaU/documentation
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
 
 import Foundation
 
@@ -43,8 +58,16 @@ class AppLogic: ObservableObject {
                 
                 // Write library occupancies to published variables so we can display them in our view
                 self.websterOccupancy = libraryData?.webster.occupancy ?? "0"
+                
+                let websterA = self.websterOccupancy.components(separatedBy: ".")
+                self.websterOccupancy = websterA[0]
+                
                 self.vanierOccupancy = libraryData?.vanier.occupancy ?? "0"
-                self.greyNunsOccupancy = libraryData?.greyNuns.occupancy ?? "0"
+                let vanierA = self.vanierOccupancy.components(separatedBy: ".")
+                self.vanierOccupancy = vanierA[0]
+                
+                // Grey Nuns occupancy, not used for now.
+                //self.greyNunsOccupancy = libraryData?.greyNuns.occupancy ?? "0"
                 
                 // Call our function to set the time the API was last called
                 self.lastApiTime()
@@ -58,6 +81,7 @@ class AppLogic: ObservableObject {
         }.resume()
     }
     
+    // Method to get the current time and store it as a published var
     func lastApiTime() {
         
         let date = Date()
