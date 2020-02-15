@@ -26,19 +26,14 @@ import SwiftUI
 struct ImageView: View {
     var body: some View {
         VStack {
-        HStack {
-        Image("book-icon")
-            .resizable()
-            .scaledToFit()
-         //   .cornerRadius(12) // Inner corner radius
-            .padding() // Width of the border
-          //  .background(Color(.brown))
-         //   .cornerRadius(12)
-            
+            HStack {
+                Image("book-icon")
+                .resizable()
+                .scaledToFit()
+                .padding()
+            }
         }
-        }
-}
-    
+    }
 }
 
 struct ImageView_Previews: PreviewProvider {

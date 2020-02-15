@@ -59,7 +59,6 @@ struct OccupancyView: View {
             }
             .padding()
             .background(Color.init(.systemGreen))
-          //  .cornerRadius(30)
             .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
             
             Spacer()
@@ -73,15 +72,13 @@ struct OccupancyView: View {
                     Text("\(self.applogic.time)")
                         .font(.subheadline)
                           .padding()
-                  //    Spacer()
                   }
                   .padding()
                   .background(Color.init(.systemBlue))
                 .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
             }
-            
+            }
         }
-    }
     }
 }
 

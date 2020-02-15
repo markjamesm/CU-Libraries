@@ -23,6 +23,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import Foundation
 
+// These structs are used to model the JSON response from the Open Data API.
+
 // MARK: - LibraryData
 struct LibraryData: Codable {
     let webster, vanier, greyNuns: GreyNuns

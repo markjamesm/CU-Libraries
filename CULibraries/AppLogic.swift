@@ -31,14 +31,16 @@ class AppLogic: ObservableObject {
     @Published var greyNunsOccupancy = " "
     @Published var time = " "
 
+    
+    // The function which gets the current library occupancy rates and then updates the published vars.
     func getOccupancyRates() {
         
       // Build the authentication credentials
-      let credential = URLCredential(user: "169", password: "fd896d1fc8a3fcdb8c0d29bab51720e3", persistence: .forSession)
+      let credential = URLCredential(user: "301", password: "d9d477f3accfbf1f61937ba0f54b3782", persistence: .forSession)
       let protectionSpace = URLProtectionSpace.init(host: "opendata.concordia.ca", port: 443, protocol: "https", realm: "Protected", authenticationMethod: NSURLAuthenticationMethodHTTPBasic)
       URLCredentialStorage.shared.setDefaultCredential(credential, for: protectionSpace)
 
-        // Build the request and get JSON
+        // Build the request and get JSON from the Open Data API
         let urlString = "https://opendata.concordia.ca/API/v1/library/occupancy/"
         guard let url = URL(string: urlString) else { return }
         
@@ -53,24 +55,25 @@ class AppLogic: ObservableObject {
         //Decode JSON data
         let libraryData = try? JSONDecoder().decode(LibraryData.self, from: data)
         
-            //Get back to the main queue so we can publish our observable variables to view
-            DispatchQueue.main.async {
+        //Get back to the main queue so we can publish our observable variables to view
+        DispatchQueue.main.async {
                 
-                // Write library occupancies to published variables so we can display them in our view
-                self.websterOccupancy = libraryData?.webster.occupancy ?? "0"
+            // Write library occupancies to published variables so we can display them in our view
+            // Since the JSON returns the occupancy as a string with decimal places, we need to split
+            // everything after the decimal in an array and then store the first part of the array.
+            self.websterOccupancy = libraryData?.webster.occupancy ?? "0"
+            let websterA = self.websterOccupancy.components(separatedBy: ".")
+            self.websterOccupancy = websterA[0]
                 
-                let websterA = self.websterOccupancy.components(separatedBy: ".")
-                self.websterOccupancy = websterA[0]
+            self.vanierOccupancy = libraryData?.vanier.occupancy ?? "0"
+            let vanierA = self.vanierOccupancy.components(separatedBy: ".")
+            self.vanierOccupancy = vanierA[0]
                 
-                self.vanierOccupancy = libraryData?.vanier.occupancy ?? "0"
-                let vanierA = self.vanierOccupancy.components(separatedBy: ".")
-                self.vanierOccupancy = vanierA[0]
+            // Grey Nuns occupancy, not used for now.
+            //self.greyNunsOccupancy = libraryData?.greyNuns.occupancy ?? "0"
                 
-                // Grey Nuns occupancy, not used for now.
-                //self.greyNunsOccupancy = libraryData?.greyNuns.occupancy ?? "0"
-                
-                // Call our function to set the time the API was last called
-                self.lastApiTime()
+            // Method to update the time when the API was last called
+            self.lastApiTime()
                 
             }
             
