@@ -33,7 +33,7 @@ struct FooterView: View {
         Spacer()
         HStack {
             
-            Text("Last Updated")
+            Text("Last Update")
                 .font(.subheadline)
                 .foregroundColor(Color(.systemGray6))
                 .padding()

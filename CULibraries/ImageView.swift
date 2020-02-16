@@ -28,7 +28,7 @@ struct ImageView: View {
       //  VStack {
             HStack {
                 Spacer()
-                Image("book-icon")
+                Image("book-image")
                 .resizable()
                 .scaledToFit()
             //    .padding()

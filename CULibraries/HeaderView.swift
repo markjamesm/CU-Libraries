@@ -29,9 +29,9 @@ struct HeaderView: View {
              HStack {
                 Spacer()
                 Text("CU Libraries")
-                .font(.body)
+                    .font(.body)
                 .foregroundColor(Color.white)
-                    .padding(.top)
+                    .padding(.top, 30)
                 Spacer()
 
             }

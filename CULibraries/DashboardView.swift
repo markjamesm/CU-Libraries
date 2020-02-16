@@ -64,6 +64,7 @@ struct DashboardView: View {
             
             // Show networking error message here.
             Text("\(self.applogic.networkingError)")
+            
             FooterView()
         }
     }
