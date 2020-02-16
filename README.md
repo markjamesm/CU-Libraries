@@ -8,7 +8,7 @@ CULibraries is An iOS app to check the occupancy of the Concordia University lib
 
 ## Planned
 
-* Display library reservations
+* Display room availabilities
 
 ## Screenshot
 
