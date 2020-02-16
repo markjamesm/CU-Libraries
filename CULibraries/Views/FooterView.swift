@@ -25,7 +25,11 @@ import SwiftUI
 
 struct FooterView: View {
     
+    @State var alert1Shown = false
+    
     @EnvironmentObject var applogic: AppLogic
+    
+      let alert3 = Alert(title: Text("Notice"), message: Text("Realtime estimate of people inside the library buildings is based on data collected by sensors placed in the doors. Some values may return negative numbers as the counters reset at midnight when some people may still be in the library."), dismissButton: Alert.Button.default(Text("Dismiss")))
     
     var body: some View {
         
@@ -37,16 +41,18 @@ struct FooterView: View {
                 .font(.subheadline)
                 .foregroundColor(Color(.systemGray6))
                 .padding()
+            
             Spacer()
+            
             Text("\(self.applogic.time)")
                 .font(.subheadline)
                 .foregroundColor(Color(.systemGray6))
                 .padding()
-          //  Spacer()
             
             Button(action: {
                 
                 self.applogic.getOccupancyRates()
+                self.alert1Shown = true
                 
             }) {
                 Text("Refresh")
@@ -54,7 +60,7 @@ struct FooterView: View {
                     .foregroundColor(Color(.systemTeal))
                     .padding()
                 
-            }
+            }.alert(isPresented: $alert1Shown) {alert3}
           }
           .background(Color.init(.systemBlue))
           .cornerRadius(20, corners: [.topLeft, .topRight])

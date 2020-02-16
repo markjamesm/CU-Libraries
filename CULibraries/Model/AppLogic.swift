@@ -105,7 +105,7 @@ class AppLogic: ObservableObject {
             URLCredentialStorage.shared.setDefaultCredential(credential, for: protectionSpace)
 
               // Build the request and get JSON from the Open Data API
-              let urlString = "https://opendata.concordia.ca/API/v1/library/rooms/getResourceList"
+              let urlString = "https://opendata.concordia.ca/API/v1/library/rooms/getRoomsList"
               guard let url = URL(string: urlString) else { return }
               
               URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -131,7 +131,7 @@ class AppLogic: ObservableObject {
                   
                   // No errors to report
                   self.networkingError = ""
-                print([libraryResources])
+                  print([libraryResources])
                   self.libraryResources = [libraryResources ?? " "]
                  
                       

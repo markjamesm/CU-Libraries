@@ -32,10 +32,7 @@ struct AvailabilityView: View {
             HeaderView()
             Spacer()
             HStack {
-            List {
-                Text("Placeholder")
-            }
-            
+            Text("")
             
             }.padding()
             

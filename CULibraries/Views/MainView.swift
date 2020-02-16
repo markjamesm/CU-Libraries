@@ -41,7 +41,7 @@ struct ContentView: View {
                     AvailabilityView()
                         .tabItem {
                             Image(systemName: "desktopcomputer")
-                            Text("Room Availabilities")
+                            Text("Library Resources")
                         }
                 }
                 
