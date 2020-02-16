@@ -59,6 +59,7 @@ struct DashboardView: View {
             HStack {
 
             OccupancyView()
+                .padding()
             }
             
             // Show networking error message here.
