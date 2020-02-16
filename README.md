@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-CULibraries is An iOS app to check the occupancy of the Concordia University libraries. Built using SwiftUI and the Concordia Open Data API.
-=======
 # CU Libraries
 
 CULibraries is An iOS app to check the occupancy of the Concordia University libraries. Built using SwiftUI and the Concordia Open Data API.
@@ -17,4 +14,3 @@ CULibraries is An iOS app to check the occupancy of the Concordia University lib
 ## Screenshot
 
 ![CU Libraries iOS app screenshot](culibraries.png)
->>>>>>> master
