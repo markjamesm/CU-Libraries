@@ -31,14 +31,20 @@ struct AvailabilityView: View {
         VStack {
             HeaderView()
             Spacer()
+            
+            List {
+                Text("Placeholder")
+            }
+            
+            Spacer()
             FooterView()
             
         }
+    }
 }
 
 struct AvailabilityView_Previews: PreviewProvider {
     static var previews: some View {
         AvailabilityView().environmentObject(AppLogic())
     }
-}
 }

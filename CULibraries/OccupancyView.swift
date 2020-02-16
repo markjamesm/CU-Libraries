@@ -41,6 +41,7 @@ struct OccupancyView: View {
                 Spacer()
                 Text("\(self.applogic.websterOccupancy) people")
                     .font(.body)
+                    .foregroundColor(Color.white)
                     .padding()
                 Spacer()
             }
@@ -55,6 +56,7 @@ struct OccupancyView: View {
                 Spacer()
                 Text("\(self.applogic.vanierOccupancy) people")
                     .font(.body)
+                    .foregroundColor(Color.white)
                     .padding()
                 Spacer()
             }

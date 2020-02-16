@@ -45,3 +45,10 @@ struct GreyNuns: Codable {
         case lastRecordTime = "LastRecordTime"
     }
 }
+
+// MARK: - LibraryBookingElement
+struct LibraryBookingElement: Codable {
+    let resourceID, name, scheduleID: String
+}
+
+typealias LibraryBooking = [LibraryBookingElement]

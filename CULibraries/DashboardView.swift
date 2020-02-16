@@ -57,14 +57,15 @@ struct DashboardView: View {
             Spacer()
             ImageView()
             HStack {
-                
-      //      ImageView()
+
             OccupancyView()
             }
+            
+            // Show networking error message here.
             Text("\(self.applogic.networkingError)")
             FooterView()
+        }
     }
-}
 }
 
 struct DashboardView_Previews: PreviewProvider {

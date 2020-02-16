@@ -41,12 +41,13 @@ struct ContentView: View {
                     AvailabilityView()
                         .tabItem {
                             Image(systemName: "desktopcomputer")
-                            Text("Computer Availabilities")
+                            Text("Room Availabilities")
                         }
                 }
                 
             .onAppear {
             self.applogic.getOccupancyRates()
+            self.applogic.getResourceList()
                 
             }
         }
