@@ -17,16 +17,17 @@ struct FooterView: View {
         VStack {
         Spacer()
         HStack {
+            
             Text("Last Updated")
                 .font(.subheadline)
                 .foregroundColor(Color(.systemGray6))
-                .padding(.bottom)
+                .padding()
             Spacer()
             Text("\(self.applogic.time)")
                 .font(.subheadline)
                 .foregroundColor(Color(.systemGray6))
-                .padding(.bottom)
-            Spacer()
+                .padding()
+          //  Spacer()
             
             Button(action: {
                 
@@ -36,11 +37,10 @@ struct FooterView: View {
                 Text("Refresh")
                     .font(.body)
                     .foregroundColor(Color(.systemTeal))
-                    .padding(.bottom)
+                    .padding()
                 
             }
           }
-          .padding()
           .background(Color.init(.systemBlue))
           .cornerRadius(20, corners: [.topLeft, .topRight])
         

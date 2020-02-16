@@ -31,7 +31,7 @@ struct OccupancyView: View {
        
         VStack {
         
-            VStack(alignment: .leading) {
+          //  VStack(alignment: .leading) {
         
           //  Spacer()
             HStack {
@@ -64,7 +64,7 @@ struct OccupancyView: View {
             
             Spacer()
             
-            }
+      //      }
         }
     }
 }

@@ -24,26 +24,21 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import SwiftUI
 
 struct AvailabilityView: View {
+    
+    @EnvironmentObject var applogic: AppLogic
+    
     var body: some View {
         VStack {
             HeaderView()
             Spacer()
+            FooterView()
             
-            
-            VStack(alignment: .leading) {
-                HStack {
-                Spacer()
-                    
-                    //    .padding()
-                Spacer()
-                }.padding()
-            }
         }
 }
 
 struct AvailabilityView_Previews: PreviewProvider {
     static var previews: some View {
-        AvailabilityView()
+        AvailabilityView().environmentObject(AppLogic())
     }
 }
 }

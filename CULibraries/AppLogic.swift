@@ -30,6 +30,7 @@ class AppLogic: ObservableObject {
     @Published var vanierOccupancy = " "
     @Published var greyNunsOccupancy = " "
     @Published var time = " "
+    @Published var networkingError = " "
 
     
     // The function which gets the current library occupancy rates and then updates the published vars.
@@ -46,7 +47,14 @@ class AppLogic: ObservableObject {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
         if error != nil {
-            print(error!.localizedDescription)
+            
+            // Update our published var to display an error if there's a problem with the network
+            // This needs to happen on the main thread, so lets put it inside the DispatchQueue
+            DispatchQueue.main.async {
+                
+                self.networkingError = error?.localizedDescription ?? ""
+            }
+            
         }
 
         guard let data = data else { return }
@@ -57,7 +65,10 @@ class AppLogic: ObservableObject {
         
         //Get back to the main queue so we can publish our observable variables to view
         DispatchQueue.main.async {
-                
+            
+            // No errors to report
+            self.networkingError = ""
+            
             // Write library occupancies to published variables so we can display them in our view
             // Since the JSON returns the occupancy as a string with decimal places, we need to split
             // everything after the decimal in an array and then store the first part of the array.

@@ -12,17 +12,18 @@ struct HeaderView: View {
     var body: some View {
         VStack {
              HStack {
-                           Text("CU Libraries")
-                               .font(.body)
-                               .foregroundColor(Color.white)
-                            .padding(.top)
-                           Spacer()
+                Spacer()
+                Text("CU Libraries")
+                .font(.body)
+                .foregroundColor(Color.white)
+                .padding()
+                Spacer()
 
-                       }
-             .padding()
-                       .background(Color.init(.systemGreen))
-             .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
-        } .edgesIgnoringSafeArea(.top)
+            }
+            .padding()
+            .background(Color.init(.systemGreen))
+            .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
+        }.edgesIgnoringSafeArea(.top)
     }
 }
 

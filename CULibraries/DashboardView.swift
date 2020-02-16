@@ -52,13 +52,16 @@ struct DashboardView: View {
     var body: some View {
        
         VStack {
+            
             HeaderView()
             Spacer()
+            ImageView()
             HStack {
-                Spacer()
+                
       //      ImageView()
             OccupancyView()
             }
+            Text("\(self.applogic.networkingError)")
             FooterView()
     }
 }
