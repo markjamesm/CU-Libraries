@@ -31,10 +31,13 @@ struct AvailabilityView: View {
         VStack {
             HeaderView()
             Spacer()
-            
+            HStack {
             List {
                 Text("Placeholder")
             }
+            
+            
+            }.padding()
             
             Spacer()
             FooterView()

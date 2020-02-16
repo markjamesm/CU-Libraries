@@ -63,9 +63,20 @@ struct DashboardView: View {
             }
             
             // Show networking error message here.
+            HStack {
             Text("\(self.applogic.networkingError)")
+            }
+            .fixedSize(horizontal: false, vertical: true)
+            
+     //       HStack {
+          //      Text("Real time estimate of people inside the library buildings based on data collected by the thermal and optical sensors placed in the doors. Some values may return negative numbers as the counters reset at midnight when some people may still be in the library.")
+        //           .font(.footnote)
+        //            .fixedSize(horizontal: false, vertical: true)
+        //    }.padding()
+                Spacer()
             
             FooterView()
+            
         }
     }
 }

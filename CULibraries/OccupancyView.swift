@@ -31,10 +31,8 @@ struct OccupancyView: View {
        
         VStack {
         
-          //  VStack(alignment: .leading) {
-        
-          //  Spacer()
             HStack {
+        
                 Text("Webster Library")
                     .font(.body)
                     .foregroundColor(Color.white)
