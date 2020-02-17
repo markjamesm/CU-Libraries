@@ -13,6 +13,7 @@ CU Libraries is actively being developed and is in an alpha stage. Please refer 
 ## Planned
 
 * Display library resource availabilities for a given time.
+* Show library desk hours for a given date.
 
 ## Screenshots
 
