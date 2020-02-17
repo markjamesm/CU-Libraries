@@ -12,8 +12,7 @@ CU Libraries is actively being developed and is in an alpha stage. Please refer 
 
 ## Planned
 
-* Display room availabilities
-* UI Tweaks
+* Display library resource availabilities for a given time.
 
 ## Screenshots
 
