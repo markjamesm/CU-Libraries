@@ -29,7 +29,7 @@ struct FooterView: View {
     
     @EnvironmentObject var applogic: AppLogic
     
-      let refreshAlert = Alert(title: Text("Notice"), message: Text("Realtime estimate of people inside the library buildings is based on data collected by sensors placed in the doors. Some values may return negative numbers as the counters reset at midnight when some people may still be in the library."), dismissButton: Alert.Button.default(Text("Dismiss")))
+      let refreshAlert = Alert(title: Text("Notice"), message: Text("Realtime estimate of people inside the libraries is based on data collected by door sensors. Some values may return negative numbers as the counters reset at midnight when some people may still be in the library."), dismissButton: Alert.Button.default(Text("Dismiss")))
     
     var body: some View {
         
