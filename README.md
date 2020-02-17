@@ -15,6 +15,6 @@ CU Libraries is actively being developed and is in an alpha stage. Please refer 
 * Display room availabilities
 * UI Tweaks
 
-## Screenshot
+## Screenshots
 
 ![CU Libraries iOS app screenshot](culibraries.png)     ![CU Libraries iOS app resources view](culibraries-resource.png)
