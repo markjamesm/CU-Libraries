@@ -31,7 +31,7 @@ class AppLogic: ObservableObject {
     @Published var greyNunsOccupancy = " "
     @Published var time = " "
     @Published var networkingError = " "
-    @Published var libraryResources = []
+    @Published var libraryResources = [LibraryBookingElement]()
 
     
     // The function which gets the current library occupancy rates and then updates the published vars.
@@ -55,7 +55,6 @@ class AppLogic: ObservableObject {
                 
                 self.networkingError = error?.localizedDescription ?? ""
             }
-            
         }
 
         guard let data = data else { return }
@@ -88,11 +87,9 @@ class AppLogic: ObservableObject {
             self.lastApiTime()
                 
             }
-            
         } catch let jsonError {
             print(jsonError)
         }
-            
         }.resume()
     }
     
@@ -117,24 +114,24 @@ class AppLogic: ObservableObject {
                       
                       self.networkingError = error?.localizedDescription ?? ""
                   }
-                  
               }
 
               guard let data = data else { return }
               do {
 
               //Decode JSON data
-              let libraryResources = try? JSONDecoder().decode(LibraryBooking.self, from: data)
+                let libraryResources: LibraryBooking = try! JSONDecoder().decode(LibraryBooking.self, from: data)
               
               //Get back to the main queue so we can publish our observable variables to view
               DispatchQueue.main.async {
                   
                   // No errors to report
                   self.networkingError = ""
-                  print([libraryResources])
-                  self.libraryResources = [libraryResources ?? " "]
+                  self.libraryResources = libraryResources
+                
+                  // For debug purposes only
+                  // print([libraryResources])
                  
-                      
                   // Method to update the time when the API was last called
                   self.lastApiTime()
                       
@@ -145,7 +142,6 @@ class AppLogic: ObservableObject {
               }
                   
               }.resume()
-        
     }
     
     // Method to get the current time and store it as a published var

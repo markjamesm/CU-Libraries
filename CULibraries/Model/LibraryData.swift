@@ -47,8 +47,15 @@ struct GreyNuns: Codable {
 }
 
 // MARK: - LibraryBookingElement
-struct LibraryBookingElement: Codable {
-    let resourceID, name, scheduleID: String
+struct LibraryBookingElement: Codable, Identifiable {
+    public var id = UUID()
+    public var resourceID, name, scheduleID: String
+    
+    enum CodingKeys: String, CodingKey {
+           case resourceID = "resourceID"
+           case name = "name"
+           case scheduleID = "scheduleID"
+    }
 }
 
 typealias LibraryBooking = [LibraryBookingElement]

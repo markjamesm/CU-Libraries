@@ -38,7 +38,7 @@ struct ContentView: View {
                             Text("Dashboard")
                         }
 
-                    AvailabilityView()
+                    ResourceView()
                         .tabItem {
                             Image(systemName: "desktopcomputer")
                             Text("Library Resources")
@@ -47,7 +47,6 @@ struct ContentView: View {
                 
             .onAppear {
             self.applogic.getOccupancyRates()
-            self.applogic.getResourceList()
                 
             }
         }
@@ -58,6 +57,6 @@ struct ContentView: View {
     // Preview mode on the phone
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(AppLogic())
+        ContentView().environmentObject(AppLogic()).environmentObject(AppLogic())
     }
 }

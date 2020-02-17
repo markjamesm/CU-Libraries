@@ -1,5 +1,5 @@
 /*
-AvailabilityView.swift
+ResourceView.swift
 
 CULibraries, an app to see the current occupancy of the Concordia University libraries in Montreal, Quebec.
 
@@ -23,28 +23,28 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import SwiftUI
 
-struct AvailabilityView: View {
+struct ResourceView: View {
     
     @EnvironmentObject var applogic: AppLogic
     
     var body: some View {
         VStack {
             HeaderView()
+            VStack {
+            ResourceListView()
+            }
             Spacer()
-            HStack {
-            Text("")
-            
-            }.padding()
-            
-            Spacer()
-            FooterView()
+        }
+        
+        .onAppear {
+            self.applogic.getResourceList()
             
         }
     }
 }
 
-struct AvailabilityView_Previews: PreviewProvider {
+struct ResourceView_Previews: PreviewProvider {
     static var previews: some View {
-        AvailabilityView().environmentObject(AppLogic())
+        ResourceView().environmentObject(AppLogic())
     }
 }
