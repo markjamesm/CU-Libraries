@@ -8,7 +8,9 @@ CU Libraries is actively being developed and is in an alpha stage. Please refer 
 
 ## Features
 
-* Dark mode support 
+* Realtime Webster & Vanier library occupancy data
+* Dark mode support
+* List bookable library rooms & resources
 
 ## Planned
 
