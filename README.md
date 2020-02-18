@@ -9,6 +9,7 @@ CU Libraries is actively being developed and is in an alpha stage. Please refer 
 ## Features
 
 * Realtime Webster & Vanier library occupancy data
+* Displays library hours for today's date
 * Dark mode support
 * List bookable library rooms & resources
 
