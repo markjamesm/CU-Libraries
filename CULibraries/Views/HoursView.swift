@@ -28,7 +28,7 @@ struct HoursView: View {
                     .font(.body)
                     .padding()
                 }
-            .navigationBarTitle(Text("Today's Hours"))
+            .navigationBarTitle(Text("Service Desk Hours"))
             }
         }
         .padding(.top, -35)

@@ -33,12 +33,10 @@ struct HeaderView: View {
                 .foregroundColor(Color.white)
                     .padding(.top, 30)
                 Spacer()
-
             }
             .padding()
             .background(Color.init(.systemGreen))
             .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
-        
         }.edgesIgnoringSafeArea(.top)
     }
 }

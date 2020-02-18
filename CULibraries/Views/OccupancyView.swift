@@ -65,8 +65,6 @@ struct OccupancyView: View {
             .background(Color.init(.systemGreen))
             .cornerRadius(20)
             
-        //    Spacer()
-            
             }.padding()
         }.padding()
     }

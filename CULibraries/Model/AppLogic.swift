@@ -146,7 +146,6 @@ class AppLogic: ObservableObject {
               }.resume()
     }
     
-    
        // Method to get the library hours for today's date. The date is set by passing todaysDate() as date in the
        // call
                func getLibraryHours(date: String) {
@@ -198,8 +197,6 @@ class AppLogic: ObservableObject {
                  }.resume()
        }
     
-    
-    
     // Method to get the current time and store it as a published var
     // This method could be condensed into one along with todaysDate()
     // during a refactor
@@ -211,7 +208,6 @@ class AppLogic: ObservableObject {
         self.time = format.string(from: date)
         
     }
-    
     
     // Method to pass the current date to the LibraryHours method
    func todaysDate() -> String {

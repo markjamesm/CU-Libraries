@@ -25,18 +25,16 @@ import SwiftUI
 
 struct ImageView: View {
     var body: some View {
-      //  VStack {
-            HStack {
-                Spacer()
-                Image("book-image")
-                .resizable()
-                .scaledToFit()
-            //    .padding()
-                    .aspectRatio(1, contentMode: .fit)
-                .shadow(radius: 10)
-                Spacer()
+            
+        HStack {
+            Spacer()
+            Image("book-image")
+            .resizable()
+            .scaledToFit()
+            .aspectRatio(1, contentMode: .fit)
+            .shadow(radius: 10)
+            Spacer()
             }
-     //   }.frame(width: 400, height: 300)
     }
 }
 

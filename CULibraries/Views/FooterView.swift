@@ -56,17 +56,13 @@ struct FooterView: View {
                 
             }) {
                 Text("Refresh")
-                    .font(.body)
-                    .foregroundColor(Color(.systemTeal))
-                    .padding()
-                
+                .font(.body)
+                .foregroundColor(Color(.systemTeal))
+                .padding()
             }.alert(isPresented: $refreshAlertShown) {refreshAlert}
-          }
+        }
           .background(Color.init(.systemBlue))
           .cornerRadius(20, corners: [.topLeft, .topRight])
-        
-      //  }
-        
     }
 }
 
