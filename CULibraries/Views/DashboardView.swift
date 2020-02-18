@@ -56,12 +56,12 @@ struct DashboardView: View {
             HeaderView()
             Spacer()
             ImageView()
-            HStack {
-
-            OccupancyView()
-                .padding()
-            }
             
+            HStack {
+            OccupancyView()
+                .padding(.top, -35)
+            }//.padding()
+
             // Show networking error message here.
             HStack {
             Text("\(self.applogic.networkingError)")

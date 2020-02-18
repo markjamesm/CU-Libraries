@@ -33,11 +33,11 @@ struct FooterView: View {
     
     var body: some View {
         
-        VStack {
-        Spacer()
+      //  VStack {
+      //  Spacer()
         HStack {
             
-            Text("Last Update")
+            Text("Last updated")
                 .font(.subheadline)
                 .foregroundColor(Color(.systemGray6))
                 .padding()
@@ -48,7 +48,7 @@ struct FooterView: View {
                 .font(.subheadline)
                 .foregroundColor(Color(.systemGray6))
                 .padding()
-            
+            Spacer()
             Button(action: {
                 
                 self.applogic.getOccupancyRates()
@@ -65,7 +65,7 @@ struct FooterView: View {
           .background(Color.init(.systemBlue))
           .cornerRadius(20, corners: [.topLeft, .topRight])
         
-        }
+      //  }
         
     }
 }

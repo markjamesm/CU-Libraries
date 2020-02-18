@@ -30,6 +30,7 @@ struct OccupancyView: View {
     var body: some View {
        
         VStack {
+            VStack {
         
             HStack {
         
@@ -46,7 +47,9 @@ struct OccupancyView: View {
             .padding()
             .background(Color.init(.systemBlue))
             .cornerRadius(20)
-            Spacer()
+
+            }.padding()
+            VStack {
             HStack {
                 Text("Vanier Library ")
                     .font(.body)
@@ -62,10 +65,10 @@ struct OccupancyView: View {
             .background(Color.init(.systemGreen))
             .cornerRadius(20)
             
-            Spacer()
+        //    Spacer()
             
-      //      }
-        }
+            }.padding()
+        }.padding()
     }
 }
 

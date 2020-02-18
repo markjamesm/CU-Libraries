@@ -32,7 +32,7 @@ struct ImageView: View {
                 .resizable()
                 .scaledToFit()
             //    .padding()
-                .aspectRatio(1, contentMode: .fit)
+                    .aspectRatio(1, contentMode: .fit)
                 .shadow(radius: 10)
                 Spacer()
             }

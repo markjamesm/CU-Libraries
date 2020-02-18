@@ -33,11 +33,11 @@ struct ResourceListView: View {
                    
             List(applogic.libraryResources) { item in
                   
-     //       HStack {
             Text(item.name)
-         //   }
-            .navigationBarTitle(Text("Library Resources"))
-            }
+
+            .navigationBarTitle(Text("Bookable Resources"))
+            }.id(UUID())
+
         }.padding(.top, -40)
     }
 }

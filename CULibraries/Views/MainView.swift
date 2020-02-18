@@ -37,16 +37,22 @@ struct ContentView: View {
                             Image(systemName: "list.dash")
                             Text("Dashboard")
                         }
+                    
+                    HoursView()
+                        .tabItem {
+                            Image(systemName: "clock")
+                            Text("Library Hours")
+                            }
 
                     ResourceView()
                         .tabItem {
                             Image(systemName: "desktopcomputer")
-                            Text("Library Resources")
+                            Text("Bookable Resources")
                         }
                 }
-                
             .onAppear {
             self.applogic.getOccupancyRates()
+            self.applogic.getLibraryHours(date: self.applogic.todaysDate())
                 
             }
         }
@@ -54,7 +60,7 @@ struct ContentView: View {
     }
 }
 
-    // Preview mode on the phone
+// Preview mode on the phone
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environmentObject(AppLogic()).environmentObject(AppLogic())

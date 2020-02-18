@@ -34,6 +34,7 @@ struct ResourceView: View {
             ResourceListView()
             }
             Spacer()
+            FooterView()
         }
         
         .onAppear {

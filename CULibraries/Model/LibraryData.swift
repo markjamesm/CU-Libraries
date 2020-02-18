@@ -59,3 +59,19 @@ struct LibraryBookingElement: Codable, Identifiable {
 }
 
 typealias LibraryBooking = [LibraryBookingElement]
+
+
+
+// MARK: - LibraryHour
+struct LibraryHour: Codable, Identifiable {
+    public var id = UUID()
+    var service, text: String
+    
+    enum CodingKeys: String, CodingKey {
+            case service = "service"
+            case text = "text"
+     }
+    
+}
+
+typealias LibraryHours = [LibraryHour]

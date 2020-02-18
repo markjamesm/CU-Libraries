@@ -38,6 +38,7 @@ struct HeaderView: View {
             .padding()
             .background(Color.init(.systemGreen))
             .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
+        
         }.edgesIgnoringSafeArea(.top)
     }
 }
