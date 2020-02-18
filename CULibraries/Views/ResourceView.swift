@@ -31,15 +31,23 @@ struct ResourceView: View {
         VStack {
             HeaderView()
             VStack {
-            ResourceListView()
+                NavigationView {
+                              
+                    List(applogic.libraryResources) { item in
+                             
+                    Text(item.name)
+                    }
+                    .id(UUID())
+                    .navigationBarTitle(Text("Bookable Resources"))
+                    
+                }.padding(.top, -40)
             }
             Spacer()
             FooterView()
         }
-        
         .onAppear {
+            // Call the resource list method to get list of bookable resources
             self.applogic.getResourceList()
-            
         }
     }
 }

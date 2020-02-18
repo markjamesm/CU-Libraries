@@ -23,7 +23,6 @@
 		ECAC4E7C23F0A48D001C2DD5 /* AppLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC4E7B23F0A48D001C2DD5 /* AppLogic.swift */; };
 		ECAC4E8023F0A8E6001C2DD5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC4E7F23F0A8E6001C2DD5 /* MainView.swift */; };
 		ECAC4E8223F0FF3F001C2DD5 /* LibraryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAC4E8123F0FF3F001C2DD5 /* LibraryData.swift */; };
-		ECFD5B7E23FA11180048F064 /* ResourceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD5B7D23FA11180048F064 /* ResourceListView.swift */; };
 		ECFD5B8223FB69980048F064 /* HoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFD5B8123FB69980048F064 /* HoursView.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +45,6 @@
 		ECAC4E7B23F0A48D001C2DD5 /* AppLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogic.swift; sourceTree = "<group>"; };
 		ECAC4E7F23F0A8E6001C2DD5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		ECAC4E8123F0FF3F001C2DD5 /* LibraryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryData.swift; sourceTree = "<group>"; };
-		ECFD5B7D23FA11180048F064 /* ResourceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceListView.swift; sourceTree = "<group>"; };
 		ECFD5B8123FB69980048F064 /* HoursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoursView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,9 +106,8 @@
 				ECAC4E7F23F0A8E6001C2DD5 /* MainView.swift */,
 				EC3D6C5823F617080046F796 /* DashboardView.swift */,
 				EC3D6C6423F7A5DF0046F796 /* ResourceView.swift */,
-				ECFD5B7D23FA11180048F064 /* ResourceListView.swift */,
-				EC8A4D6523F8A8FD008EB149 /* HeaderView.swift */,
 				ECFD5B8123FB69980048F064 /* HoursView.swift */,
+				EC8A4D6523F8A8FD008EB149 /* HeaderView.swift */,
 				EC22EC3123F8B32B0052C77D /* FooterView.swift */,
 				EC3D6C5A23F6188B0046F796 /* OccupancyView.swift */,
 				EC3D6C5C23F63D530046F796 /* ImageView.swift */,
@@ -204,7 +201,6 @@
 				EC3D6C5D23F63D530046F796 /* ImageView.swift in Sources */,
 				ECAC4E8023F0A8E6001C2DD5 /* MainView.swift in Sources */,
 				EC3D6C5B23F6188B0046F796 /* OccupancyView.swift in Sources */,
-				ECFD5B7E23FA11180048F064 /* ResourceListView.swift in Sources */,
 				ECFD5B8223FB69980048F064 /* HoursView.swift in Sources */,
 				EC3D6C5923F617080046F796 /* DashboardView.swift in Sources */,
 				EC8A4D6623F8A8FD008EB149 /* HeaderView.swift in Sources */,

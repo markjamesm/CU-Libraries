@@ -60,7 +60,7 @@ struct DashboardView: View {
             HStack {
             OccupancyView()
                 .padding(.top, -35)
-            }//.padding()
+            }
 
             // Show networking error message here.
             HStack {
@@ -69,9 +69,7 @@ struct DashboardView: View {
             .fixedSize(horizontal: false, vertical: true)
             
             Spacer()
-            
             FooterView()
-            
         }
     }
 }

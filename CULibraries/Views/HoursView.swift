@@ -20,20 +20,18 @@ struct HoursView: View {
             List(applogic.hours) { item in
                 HStack{
                     Text(item.service)
-                        .font(.body)
+                    .font(.body)
                     .frame(alignment: .leading)
-                       // .padding()
-                Spacer()
-                Text(item.text)
+
+                    Spacer()
+                    Text(item.text)
                     .font(.body)
                     .padding()
-           //     Spacer()
+                }
             .navigationBarTitle(Text("Today's Hours"))
-            }//.id(UUID())
+            }
         }
-        .padding()
-        }
-        .padding(.top, -25)
+        .padding(.top, -35)
         FooterView()
         }
     }

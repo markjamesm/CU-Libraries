@@ -31,29 +31,29 @@ struct ContentView: View {
     var body: some View {
         VStack() {
                 
-                TabView {
-                    DashboardView()
-                        .tabItem {
-                            Image(systemName: "list.dash")
-                            Text("Dashboard")
-                        }
+            TabView {
+                DashboardView()
+                .tabItem {
+                    Image(systemName: "list.dash")
+                    Text("Dashboard")
+                }
                     
-                    HoursView()
-                        .tabItem {
-                            Image(systemName: "clock")
-                            Text("Library Hours")
-                            }
+                HoursView()
+                .tabItem {
+                    Image(systemName: "clock")
+                    Text("Library Hours")
+                    }
 
-                    ResourceView()
-                        .tabItem {
-                            Image(systemName: "desktopcomputer")
-                            Text("Bookable Resources")
-                        }
+                ResourceView()
+                .tabItem {
+                    Image(systemName: "desktopcomputer")
+                    Text("Bookable Resources")
+                    }
                 }
             .onAppear {
+                // Get library occupancy rates & hours on view load
             self.applogic.getOccupancyRates()
             self.applogic.getLibraryHours(date: self.applogic.todaysDate())
-                
             }
         }
         .edgesIgnoringSafeArea(.top)
