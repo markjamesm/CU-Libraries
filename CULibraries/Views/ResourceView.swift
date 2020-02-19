@@ -30,7 +30,7 @@ struct ResourceView: View {
         VStack {
                 NavigationView {
                               
-                    List(applogic.libraryResources, id: \.self) { item in
+                    List(applogic.libraryResources, id: \.resourceID) { item in
                         HStack {
                     Text(item.name)
                         .font(.body)
@@ -39,7 +39,7 @@ struct ResourceView: View {
                     .navigationBarTitle(Text("Bookable Resources"))
                     
                 }
-                .id(UUID())
+             //   .id(UUID())
                     Spacer()
             }
             FooterView()
