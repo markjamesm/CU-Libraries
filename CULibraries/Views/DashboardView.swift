@@ -1,11 +1,10 @@
 /*
 DashboardView.swift
 
-CULibraries, an app to see the current occupancy of the Concordia University libraries in Montreal, Quebec.
+CULibraries, an Open Source Concordia University libraries app.
+Created using the Concordia Opendata API.
 
-Created by Mark-James M. using the Concordia Opendata API.
-
- https://github.com/opendataConcordiaU/documentation
+https://github.com/opendataConcordiaU/documentation
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -64,7 +63,7 @@ struct DashboardView: View {
 
             // Show networking error message here.
             HStack {
-            Text("\(self.applogic.networkingError)")
+            Text("\(self.applogic.networkingErrorMessage)")
             }
             .fixedSize(horizontal: false, vertical: true)
             

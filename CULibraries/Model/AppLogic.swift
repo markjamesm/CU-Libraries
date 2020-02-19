@@ -1,11 +1,10 @@
 /*
 AppLogic.swift
 
-CULibraries, an app to see the current occupancy of the Concordia University libraries in Montreal, Quebec.
+CULibraries, an Open Source Concordia University libraries app.
+Created using the Concordia Opendata API.
 
-Created by Mark-James M. using the Concordia Opendata API.
-
- https://github.com/opendataConcordiaU/documentation
+https://github.com/opendataConcordiaU/documentation
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,7 +29,8 @@ class AppLogic: ObservableObject {
     @Published var vanierOccupancy = " "
     @Published var greyNunsOccupancy = " "
     @Published var time = " "
-    @Published var networkingError = " "
+    @Published var networkingErrorMessage = " "
+    @Published var networkingError = false
     @Published var libraryResources = [LibraryBookingElement]()
     @Published var hours = [LibraryHour]()
 
@@ -54,7 +54,8 @@ class AppLogic: ObservableObject {
             // This needs to happen on the main thread, so lets put it inside the DispatchQueue
             DispatchQueue.main.async {
                 
-                self.networkingError = error?.localizedDescription ?? ""
+                self.networkingError = true
+                self.networkingErrorMessage = error?.localizedDescription ?? ""
             }
         }
 
@@ -68,7 +69,7 @@ class AppLogic: ObservableObject {
         DispatchQueue.main.async {
             
             // No errors to report
-            self.networkingError = ""
+            self.networkingErrorMessage = ""
             
             // Write library occupancies to published variables so we can display them in our view
             // Since the JSON returns the occupancy as a string with decimal places, we need to split
@@ -113,7 +114,8 @@ class AppLogic: ObservableObject {
                   // This needs to happen on the main thread, so lets put it inside the DispatchQueue
                   DispatchQueue.main.async {
                       
-                      self.networkingError = error?.localizedDescription ?? ""
+                      self.networkingErrorMessage = error?.localizedDescription ?? ""
+                      self.networkingError = true
                   }
               }
 
@@ -127,7 +129,7 @@ class AppLogic: ObservableObject {
               DispatchQueue.main.async {
                   
                   // No errors to report
-                  self.networkingError = ""
+                  self.networkingErrorMessage = ""
                   self.libraryResources = libraryResources
                 
                   // For debug purposes only
@@ -167,7 +169,8 @@ class AppLogic: ObservableObject {
                      // This needs to happen on the main thread, so lets put it inside the DispatchQueue
                      DispatchQueue.main.async {
                          
-                         self.networkingError = error?.localizedDescription ?? ""
+                         self.networkingErrorMessage = error?.localizedDescription ?? ""
+                         self.networkingError = true
                      }
                  }
 
@@ -181,7 +184,7 @@ class AppLogic: ObservableObject {
                  DispatchQueue.main.async {
                      
                      // No errors to report
-                     self.networkingError = ""
+                     self.networkingErrorMessage = ""
                      self.hours = hours
                     
                      // Method to update the time when the API was last called
