@@ -18,4 +18,5 @@ CU Libraries is actively being developed and is in an alpha stage. Please refer 
 * Display library resource availabilities for a given time.
 
 ## Screenshots
-![Screen Shot 2020-02-17 at 11 08 29 PM](https://user-images.githubusercontent.com/20845425/74703245-99023300-51da-11ea-891c-124c01798641.png) ![Screen Shot 2020-02-17 at 11 08 37 PM](https://user-images.githubusercontent.com/20845425/74703265-a7504f00-51da-11ea-918d-29435e261da6.png) ![Screen Shot 2020-02-17 at 11 08 42 PM](https://user-images.githubusercontent.com/20845425/74703280-b6370180-51da-11ea-8a97-16f93fc971f8.png)
+![Screen Shot 2020-02-18 at 7 07 41 PM](https://user-images.githubusercontent.com/20845425/74789184-f0a7a980-5281-11ea-87d9-9d819ad6f10e.png)
+ ![Screen Shot 2020-02-18 at 7 13 20 PM](https://user-images.githubusercontent.com/20845425/74789417-bc80b880-5282-11ea-92f1-e5b05ef6f94c.png) ![Screen Shot 2020-02-18 at 7 14 09 PM](https://user-images.githubusercontent.com/20845425/74789458-d7ebc380-5282-11ea-94fd-9528a13e53cb.png)
