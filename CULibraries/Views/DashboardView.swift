@@ -66,7 +66,7 @@ struct DashboardView: View {
             Text("\(self.applogic.networkingErrorMessage)")
             }
             .fixedSize(horizontal: false, vertical: true)
-            
+            ReservationView()
             Spacer()
             FooterView()
         }
