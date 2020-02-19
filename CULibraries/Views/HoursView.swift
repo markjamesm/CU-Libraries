@@ -14,24 +14,21 @@ struct HoursView: View {
     
     var body: some View {
         VStack {
-        HeaderView()
-        NavigationView {
+            NavigationView {
                    
             List(applogic.hours) { item in
-                HStack{
-                    Text(item.service)
-                    .font(.body)
-                    .frame(alignment: .leading)
+            HStack{
+                Text(item.service)
+                .font(.body)
+                .frame(alignment: .leading)
 
-                    Spacer()
-                    Text(item.text)
-                    .font(.body)
-                    .padding()
-                }
+                Spacer()
+                Text(item.text)
+                .font(.body)
+            }
             .navigationBarTitle(Text("Service Desk Hours"))
             }
-        }
-        .padding(.top, -35)
+            }
         FooterView()
         }
     }

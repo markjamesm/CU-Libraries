@@ -47,7 +47,7 @@ struct GreyNuns: Codable {
 }
 
 // MARK: - LibraryBookingElement
-struct LibraryBookingElement: Codable, Identifiable {
+struct LibraryBookingElement: Codable, Identifiable, Hashable {
     public var id = UUID()
     public var resourceID, name, scheduleID: String
     

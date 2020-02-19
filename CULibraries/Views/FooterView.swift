@@ -33,8 +33,6 @@ struct FooterView: View {
     
     var body: some View {
         
-      //  VStack {
-      //  Spacer()
         HStack {
             
             Text("Last updated")

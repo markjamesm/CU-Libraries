@@ -29,20 +29,19 @@ struct ResourceView: View {
     
     var body: some View {
         VStack {
-            HeaderView()
-            VStack {
                 NavigationView {
                               
-                    List(applogic.libraryResources) { item in
-                             
+                    List(applogic.libraryResources, id: \.self) { item in
+                        HStack {
                     Text(item.name)
+                        .font(.body)
+                        .frame(alignment: .leading)
                     }
-                    .id(UUID())
                     .navigationBarTitle(Text("Bookable Resources"))
                     
-                }.padding(.top, -40)
+                }
+                .id(UUID())
             }
-            Spacer()
             FooterView()
         }
         .onAppear {
