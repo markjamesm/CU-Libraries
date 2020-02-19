@@ -49,6 +49,7 @@ struct FooterView: View {
             Button(action: {
                 
                 self.applogic.getOccupancyRates()
+                self.applogic.getResourceList()
                 self.refreshAlertShown = true
                 
             }) {

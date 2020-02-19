@@ -28,6 +28,8 @@ struct ContentView: View {
     @EnvironmentObject var applogic: AppLogic
     
     var body: some View {
+        
+        
         VStack() {
                 
             TabView {
@@ -53,6 +55,7 @@ struct ContentView: View {
                 // Get library occupancy rates & hours on view load
                 self.applogic.getOccupancyRates()
                 self.applogic.getLibraryHours(date: self.applogic.todaysDate())
+                self.applogic.getResourceList()
             }
         }
         .edgesIgnoringSafeArea(.top)

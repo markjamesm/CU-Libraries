@@ -46,7 +46,7 @@ struct ResourceView: View {
         }
         .onAppear {
             // Call the resource list method to get list of bookable resources
-            self.applogic.getResourceList()
+        //    self.applogic.getResourceList()
         }
     }
 }

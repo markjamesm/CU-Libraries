@@ -30,7 +30,7 @@ class AppLogic: ObservableObject {
     @Published var greyNunsOccupancy = " "
     @Published var time = " "
     @Published var networkingErrorMessage = " "
-    @Published var networkingError = false
+    @Published var networkingError: Bool = false
     @Published var libraryResources = [LibraryBookingElement]()
     @Published var hours = [LibraryHour]()
 
