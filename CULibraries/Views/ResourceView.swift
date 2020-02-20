@@ -42,7 +42,6 @@ struct ResourceView: View {
                     .navigationBarTitle(Text("Bookable Resources"))
                     
                 }
-             //   .id(UUID())
                     Spacer()
             }
             FooterView()

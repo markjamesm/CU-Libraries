@@ -114,3 +114,67 @@ enum ReferenceNumber: Codable {
 }
 
 typealias LibraryReservation = [LibraryReservationElement]
+
+
+// MARK: - LibraryComputers
+struct LibraryComputers: Codable, Identifiable {
+    let id = UUID()
+    let webster: Webster
+    let vanier: Vanier
+
+    enum CodingKeys: String, CodingKey {
+        case webster = "Webster"
+        case vanier = "Vanier"
+    }
+}
+
+// MARK: - Vanier
+struct Vanier: Codable {
+    let desktops: VanierDesktops
+    let laptops, tablets: String
+
+    enum CodingKeys: String, CodingKey {
+        case desktops = "Desktops"
+        case laptops = "Laptops"
+        case tablets = "Tablets"
+    }
+}
+
+// MARK: - VanierDesktops
+struct VanierDesktops: Codable {
+    let vl122, vl201, vlEntrance: String
+
+    enum CodingKeys: String, CodingKey {
+        case vl122 = "VL-122"
+        case vl201 = "VL-201"
+        case vlEntrance = "VL-Entrance"
+    }
+}
+
+// MARK: - Webster
+struct Webster: Codable {
+    let desktops: WebsterDesktops
+    let laptops, tablets: String
+
+    enum CodingKeys: String, CodingKey {
+        case desktops = "Desktops"
+        case laptops = "Laptops"
+        case tablets = "Tablets"
+    }
+}
+
+// MARK: - WebsterDesktops
+struct WebsterDesktops: Codable {
+    let lb245, lb285, lb345, lb385: String
+    let lb445, lb485, lb545: String
+
+    enum CodingKeys: String, CodingKey {
+        case lb245 = "LB-245"
+        case lb285 = "LB-285"
+        case lb345 = "LB-345"
+        case lb385 = "LB-385"
+        case lb445 = "LB-445"
+        case lb485 = "LB-485"
+        case lb545 = "LB-545"
+    }
+}

@@ -36,6 +36,7 @@ class AppLogic: ObservableObject {
     @Published var libraryReservation = [LibraryReservationElement]()
     @Published var resourceID = "53"
     @Published var scheduleID = "1"
+    @Published var libraryComputers = [LibraryComputers]()
 
     
     // The function which gets the current library occupancy rates and then updates the published vars.
@@ -258,6 +259,64 @@ class AppLogic: ObservableObject {
                      
                  }.resume()
        }
+    
+    
+    // Method to download computer availabilities
+    func getComputerUse() {
+        
+        // Build the authentication credentials
+            let credential = URLCredential(user: "301", password: "d9d477f3accfbf1f61937ba0f54b3782", persistence: .forSession)
+            let protectionSpace = URLProtectionSpace.init(host: "opendata.concordia.ca", port: 443, protocol: "https", realm: "Protected", authenticationMethod: NSURLAuthenticationMethodHTTPBasic)
+            URLCredentialStorage.shared.setDefaultCredential(credential, for: protectionSpace)
+
+              // Build the request and get JSON from the Open Data API
+              let urlString = "https://opendata.concordia.ca/API/v1/library/computers/"
+              guard let url = URL(string: urlString) else { return }
+              
+              URLSession.shared.dataTask(with: url) { (data, response, error) in
+              if error != nil {
+                  
+                  // Update our published var to display an error if there's a problem with the network
+                  // This needs to happen on the main thread, so lets put it inside the DispatchQueue
+                  DispatchQueue.main.async {
+                      
+                      self.networkingErrorMessage = error?.localizedDescription ?? ""
+                      self.networkingError = true
+                  }
+              }
+
+              guard let data = data else { return }
+              do {
+
+              //Decode JSON data
+                let libraryComputers: LibraryComputers = try! JSONDecoder().decode(LibraryComputers.self, from: data)
+              
+              //Get back to the main queue so we can publish our observable variables to view
+              DispatchQueue.main.async {
+                  
+                  // No errors to report
+                  self.networkingErrorMessage = ""
+                  self.libraryComputers = libraryComputers
+                  // print(libraryComputers)
+                
+                  // For debug purposes only
+                  // print([libraryResources])
+                 
+                  // Method to update the time when the API was last called
+                  // Need to store this as a separate value so its distinguishable from the getResourceList() invocation
+                  // self.lastApiTime()
+                      
+                  }
+                  
+              } catch let jsonError {
+                  print(jsonError)
+              }
+                  
+              }.resume()
+    }
+    
+    
+    
     
     // Method to get the current time and store it as a published var
     // This method could be condensed into one along with todaysDate()

@@ -16,9 +16,11 @@ struct ReservationView: View {
         VStack {
         //    NavigationView {
             HStack{
+                Spacer()
                 Text("Booking Start")
                 Spacer()
                 Text("Booking End")
+                Spacer()
             }.padding()
                    
             List(applogic.libraryReservation) { item in
