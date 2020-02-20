@@ -34,6 +34,8 @@ class AppLogic: ObservableObject {
     @Published var libraryResources = [LibraryBookingElement]()
     @Published var hours = [LibraryHour]()
     @Published var libraryReservation = [LibraryReservationElement]()
+    @Published var resourceID = "53"
+    @Published var scheduleID = "1"
 
     
     // The function which gets the current library occupancy rates and then updates the published vars.
@@ -202,7 +204,7 @@ class AppLogic: ObservableObject {
        }
     
     
-    func getReservation() {
+    func getReservation(resourceID: String, scheduleID: String) {
            
            // Build the authentication credentials
                let credential = URLCredential(user: "301", password: "d9d477f3accfbf1f61937ba0f54b3782", persistence: .forSession)
@@ -210,7 +212,9 @@ class AppLogic: ObservableObject {
                URLCredentialStorage.shared.setDefaultCredential(credential, for: protectionSpace)
 
                  // Build the request and get JSON from the Open Data API
-                 let urlString = "https://opendata.concordia.ca/API/v1/library/rooms/getRoomReservations/53/1"
+                 // Build the request and get JSON from the Open Data API
+                 let baseURL = "https://opendata.concordia.ca/API/v1/library/rooms/getRoomReservations/"
+                 let urlString = baseURL + "\(resourceID)/" + scheduleID
                  guard let url = URL(string: urlString) else { return }
                  
                  URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -237,6 +241,7 @@ class AppLogic: ObservableObject {
                      // No errors to report
                      self.networkingErrorMessage = ""
                      self.libraryReservation = libraryReservations
+                    print(libraryReservations)
                    
                      // For debug purposes only
                      // print([libraryResources])

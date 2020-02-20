@@ -14,13 +14,15 @@ struct ReservationView: View {
     
     var body: some View {
         VStack {
-            NavigationView {
+        //    NavigationView {
+            HStack{
+                Text("Booking Start")
+                Spacer()
+                Text("Booking End")
+            }.padding()
                    
             List(applogic.libraryReservation) { item in
             HStack{
-                Text("\(item.referenceNumber)")
-                    .font(.body)
-                    .frame(alignment: .leading)
                 
                 Text(item.startDate)
                 .font(.body)
@@ -30,11 +32,11 @@ struct ReservationView: View {
                 Text(item.endDate)
                 .font(.body)
             }
-            .navigationBarTitle(Text("Reservations"))
+           // .navigationBarTitle(Text("Reservations"))
             }
                 Spacer()
-            }
-        FooterView()
+         //   }
+    //    FooterView()
         }
     }
 }

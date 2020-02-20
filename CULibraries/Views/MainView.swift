@@ -56,7 +56,6 @@ struct ContentView: View {
                 self.applogic.getOccupancyRates()
                 self.applogic.getLibraryHours(date: self.applogic.todaysDate())
                 self.applogic.getResourceList()
-                self.applogic.getReservation()
             }
         }
         .edgesIgnoringSafeArea(.top)

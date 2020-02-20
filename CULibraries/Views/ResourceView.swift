@@ -29,12 +29,15 @@ struct ResourceView: View {
     var body: some View {
         VStack {
                 NavigationView {
-                              
-                    List(applogic.libraryResources, id: \.resourceID) { item in
+                    
+                    NavigationLink(destination: ReservationView()) {
+                    
+                        List(applogic.libraryResources, id: \.resourceID) { item in
                         HStack {
                     Text(item.name)
                         .font(.body)
                         .frame(alignment: .leading)
+                    }
                     }
                     .navigationBarTitle(Text("Bookable Resources"))
                     
@@ -44,10 +47,9 @@ struct ResourceView: View {
             }
             FooterView()
         }
-        .onAppear {
-            // Call the resource list method to get list of bookable resources
-        //    self.applogic.getResourceList()
-        }
+         .onAppear {
+                   self.applogic.getReservation(resourceID: self.applogic.resourceID, scheduleID: self.applogic.scheduleID)
+               }
     }
 }
 
