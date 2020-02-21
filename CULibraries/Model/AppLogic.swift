@@ -36,7 +36,8 @@ class AppLogic: ObservableObject {
     @Published var libraryReservation = [LibraryReservationElement]()
     @Published var resourceID = "53"
     @Published var scheduleID = "1"
-    @Published var libraryComputers = [LibraryComputers]()
+    @Published var libraryComputers: LibraryComputers?
+    //@Published var websterDesktops = [WebsterDesk]()
 
     
     // The function which gets the current library occupancy rates and then updates the published vars.
@@ -135,13 +136,6 @@ class AppLogic: ObservableObject {
                   // No errors to report
                   self.networkingErrorMessage = ""
                   self.libraryResources = libraryResources
-                
-                  // For debug purposes only
-                  // print([libraryResources])
-                 
-                  // Method to update the time when the API was last called
-                  // Need to store this as a separate value so its distinguishable from the getResourceList() invocation
-                  // self.lastApiTime()
                       
                   }
                   
@@ -213,7 +207,6 @@ class AppLogic: ObservableObject {
                URLCredentialStorage.shared.setDefaultCredential(credential, for: protectionSpace)
 
                  // Build the request and get JSON from the Open Data API
-                 // Build the request and get JSON from the Open Data API
                  let baseURL = "https://opendata.concordia.ca/API/v1/library/rooms/getRoomReservations/"
                  let urlString = baseURL + "\(resourceID)/" + scheduleID
                  guard let url = URL(string: urlString) else { return }
@@ -242,7 +235,7 @@ class AppLogic: ObservableObject {
                      // No errors to report
                      self.networkingErrorMessage = ""
                      self.libraryReservation = libraryReservations
-                    print(libraryReservations)
+                //    print(libraryReservations)
                    
                      // For debug purposes only
                      // print([libraryResources])
@@ -296,8 +289,10 @@ class AppLogic: ObservableObject {
                   
                   // No errors to report
                   self.networkingErrorMessage = ""
-                  self.libraryComputers = libraryComputers
-                  // print(libraryComputers)
+               //   self.libraryComputers = libraryComputers
+                self.libraryComputers = libraryComputers
+            //    print(type(of: libraryComputers.vanier))
+            //    self.websterDesktops = Array(libraryComputers.webster)
                 
                   // For debug purposes only
                   // print([libraryResources])
@@ -314,7 +309,6 @@ class AppLogic: ObservableObject {
                   
               }.resume()
     }
-    
     
     
     

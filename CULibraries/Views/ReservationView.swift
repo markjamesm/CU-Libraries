@@ -34,11 +34,8 @@ struct ReservationView: View {
                 Text(item.endDate)
                 .font(.body)
             }
-           // .navigationBarTitle(Text("Reservations"))
             }
                 Spacer()
-         //   }
-    //    FooterView()
         }
     }
 }

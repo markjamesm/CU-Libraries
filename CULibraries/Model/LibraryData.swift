@@ -163,6 +163,7 @@ struct Webster: Codable {
     }
 }
 
+
 // MARK: - WebsterDesktops
 struct WebsterDesktops: Codable {
     let lb245, lb285, lb345, lb385: String
@@ -178,3 +179,5 @@ struct WebsterDesktops: Codable {
         case lb545 = "LB-545"
     }
 }
+
+//typealias WebsterDesk = [WebsterDesktops]

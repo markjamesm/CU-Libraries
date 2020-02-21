@@ -45,10 +45,11 @@ struct ContentView: View {
                     Text("Library Hours")
                     }
 
-                ResourceView()
+              //  ResourceView()
+                ComputerView()
                 .tabItem {
                     Image(systemName: "desktopcomputer")
-                    Text("Bookable Resources")
+                    Text("Computer Availability")
                     }
                 }
             .onAppear {
