@@ -25,6 +25,9 @@ import SwiftUI
 struct ReservationView: View {
 
     @EnvironmentObject var applogic: AppLogic
+    
+    internal var resourceID: String
+    internal var scheduleID: String
 
     var body: some View {
         VStack {
@@ -50,12 +53,16 @@ struct ReservationView: View {
             }
             }
                 Spacer()
-        }
+        } .onAppear {
+            self.applogic.getReservation(resourceID: self.resourceID, scheduleID: self.scheduleID)
+               }
+        
+        
     }
 }
 
 struct ReservationView_Previews: PreviewProvider {
     static var previews: some View {
-        ReservationView().environmentObject(AppLogic())
+        ReservationView(resourceID: "51", scheduleID: "1").environmentObject(AppLogic())
     }
 }

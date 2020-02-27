@@ -29,9 +29,11 @@ struct ResourceView: View {
     var body: some View {
         VStack {
             NavigationView {
-                NavigationLink(destination: ReservationView()) {
-
+                
                     List(applogic.libraryResources, id: \.resourceID) { item in
+                        
+                        NavigationLink(destination: ReservationView(resourceID: self.applogic.resourceID, scheduleID: self.applogic.scheduleID)) {
+
                         HStack {
                             Text(item.name)
                                 .font(.body)
@@ -44,9 +46,9 @@ struct ResourceView: View {
             }
             FooterView()
         }
-         .onAppear {
-            self.applogic.getReservation(resourceID: self.applogic.resourceID, scheduleID: self.applogic.scheduleID)
-        }
+      //   .onAppear {
+       //     self.applogic.getReservation(resourceID: self.resourceID, scheduleID: self.scheduleID)
+      //  }
     }
 }
 

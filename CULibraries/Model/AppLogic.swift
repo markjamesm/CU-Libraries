@@ -40,8 +40,8 @@ class AppLogic: ObservableObject {
     @Published var libraryResources = [LibraryBookingElement]()
     @Published var hours = [LibraryHour]()
     @Published var libraryReservation = [LibraryReservationElement]()
-    @Published var resourceID = "53"
-    @Published var scheduleID = "1"
+    @Published var resourceID = ""
+    @Published var scheduleID = ""
     @Published var libraryComputers: LibraryComputers?
     @Published var jsonError = " "
     @Published var reservationNetworkErrorMessage = " "
