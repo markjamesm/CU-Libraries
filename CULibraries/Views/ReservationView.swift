@@ -28,21 +28,27 @@ struct ReservationView: View {
     
     internal var resourceID: String
     internal var scheduleID: String
+    internal var name: String
 
     var body: some View {
         VStack {
-        //    NavigationView {
-            HStack {
+
+            HStack{
                 Spacer()
+                Text(self.name)
+                    .font(.headline)
+                Spacer()
+            }.padding()
+            HStack {
                 Text("Booking Start")
+                    .padding()
                 Spacer()
                 Text("Booking End")
                 Spacer()
-            }.padding()
+            }
 
             List(applogic.libraryReservation) { item in
             HStack {
-
                 Text(item.startDate)
                 .font(.body)
                 .frame(alignment: .leading)
@@ -55,6 +61,7 @@ struct ReservationView: View {
                 Spacer()
         }.onAppear {
             self.applogic.getReservation(resourceID: self.resourceID, scheduleID: self.scheduleID)
+            
            // print(self.resourceID)
            // print(self.scheduleID)
             }
@@ -63,6 +70,6 @@ struct ReservationView: View {
 
 struct ReservationView_Previews: PreviewProvider {
     static var previews: some View {
-        ReservationView(resourceID: "51", scheduleID: "1").environmentObject(AppLogic())
+        ReservationView(resourceID: "51", scheduleID: "1", name: "Test").environmentObject(AppLogic())
     }
 }

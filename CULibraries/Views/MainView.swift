@@ -47,7 +47,7 @@ struct ContentView: View {
                 ResourceView()
                 .tabItem {
                     Image(systemName: "paperplane")
-                    Text("Bookables")
+                    Text("Resources")
                     }
 
                 ComputerView()

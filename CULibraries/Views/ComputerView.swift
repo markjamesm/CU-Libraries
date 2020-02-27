@@ -31,6 +31,7 @@ struct ComputerView: View {
             List {
                 NavigationLink(destination: WebsterComputerView()) {
                     Text("Webster Library")
+                    
                 }
                 NavigationLink(destination: VanierComputerView()) {
                     Text("Vanier Library")

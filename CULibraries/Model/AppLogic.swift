@@ -365,16 +365,8 @@ class AppLogic: ObservableObject {
                 //Get back to the main queue so we can publish our observable variables to view
                 DispatchQueue.main.async {
                     
-                    // No errors to report
-               //     self.networkingErrorMessage = ""
+                  // No errors to report
                   self.libraryReservation = libraryReservations
-                 //  print(self.networkingErrorMessage)
-                    // For debug purposes only
-                    // print([libraryResources])
-                   
-                    // Method to update the time when the API was last called
-                    // Need to store this as a separate value so its distinguishable from the getResourceList() invocation
-                    // self.lastApiTime()
                         
                     }
                     

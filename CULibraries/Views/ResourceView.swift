@@ -32,8 +32,9 @@ struct ResourceView: View {
                 
                     List(applogic.libraryResources, id: \.resourceID) { item in
                         
-                        NavigationLink(destination: ReservationView(resourceID: item.resourceID, scheduleID: item.scheduleID)) {
-
+                        // Pass the resource and schedule IDs to our child views
+                        NavigationLink(destination: ReservationView(resourceID: item.resourceID, scheduleID: item.scheduleID, name: item.name)) {
+                        
                         HStack {
                             Text(item.name)
                                 .font(.body)
@@ -46,9 +47,7 @@ struct ResourceView: View {
             }
             FooterView()
         }
-      //   .onAppear {
-       //     self.applogic.getReservation(resourceID: self.resourceID, scheduleID: self.scheduleID)
-      //  }
+
     }
 }
 

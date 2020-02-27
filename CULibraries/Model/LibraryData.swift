@@ -84,6 +84,7 @@ struct LibraryReservationElement: Codable, Identifiable {
     let startDate, endDate: String
 }
 
+
 enum ReferenceNumber: Codable {
     case integer(Int)
     case string(String)
@@ -92,6 +93,7 @@ enum ReferenceNumber: Codable {
         let container = try decoder.singleValueContainer()
         if let x = try? container.decode(Int.self) {
             self = .integer(x)
+          //  self = .string(String(x))
             return
         }
         if let x = try? container.decode(String.self) {
