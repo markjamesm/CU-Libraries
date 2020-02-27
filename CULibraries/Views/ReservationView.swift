@@ -53,11 +53,11 @@ struct ReservationView: View {
             }
             }
                 Spacer()
-        } .onAppear {
+        }.onAppear {
             self.applogic.getReservation(resourceID: self.resourceID, scheduleID: self.scheduleID)
-               }
-        
-        
+           // print(self.resourceID)
+           // print(self.scheduleID)
+            }
     }
 }
 

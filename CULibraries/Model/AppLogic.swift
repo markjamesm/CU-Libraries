@@ -40,8 +40,8 @@ class AppLogic: ObservableObject {
     @Published var libraryResources = [LibraryBookingElement]()
     @Published var hours = [LibraryHour]()
     @Published var libraryReservation = [LibraryReservationElement]()
-    @Published var resourceID = ""
-    @Published var scheduleID = ""
+    @Published var resourceID = "53"
+    @Published var scheduleID = "1"
     @Published var libraryComputers: LibraryComputers?
     @Published var jsonError = " "
     @Published var reservationNetworkErrorMessage = " "
@@ -367,7 +367,7 @@ class AppLogic: ObservableObject {
                     
                     // No errors to report
                //     self.networkingErrorMessage = ""
-                    self.libraryReservation = libraryReservations
+                  self.libraryReservation = libraryReservations
                  //  print(self.networkingErrorMessage)
                     // For debug purposes only
                     // print([libraryResources])

@@ -32,7 +32,7 @@ struct ResourceView: View {
                 
                     List(applogic.libraryResources, id: \.resourceID) { item in
                         
-                        NavigationLink(destination: ReservationView(resourceID: self.applogic.resourceID, scheduleID: self.applogic.scheduleID)) {
+                        NavigationLink(destination: ReservationView(resourceID: item.resourceID, scheduleID: item.scheduleID)) {
 
                         HStack {
                             Text(item.name)
