@@ -81,9 +81,15 @@ typealias LibraryHours = [LibraryHour]
 struct LibraryReservationElement: Codable, Identifiable {
     let id = UUID()
     let referenceNumber: ReferenceNumber
-    let startDate, endDate: String
+  //  let startDate, endDate: String
+    let startDate, endDate: Date?
 }
 
+//enum StartDate: Codeable {
+//    case date(Date)
+//    case null(Nil)
+    
+//}
 
 enum ReferenceNumber: Codable {
     case integer(Int)
@@ -93,7 +99,7 @@ enum ReferenceNumber: Codable {
         let container = try decoder.singleValueContainer()
         if let x = try? container.decode(Int.self) {
             self = .integer(x)
-          //  self = .string(String(x))
+          //  self = .string(String(""))
             return
         }
         if let x = try? container.decode(String.self) {

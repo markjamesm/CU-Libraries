@@ -261,29 +261,6 @@ class AppLogic: ObservableObject {
               }.resume()
     }
 
-    // Both these methods could go in a separate time file and sit in a struct for modularity.
-
-    // Method to get the current time and store it as a published var
- func lastApiTime() {
-
-        let date = Date()
-        let format = DateFormatter()
-        //  format.dateStyle = .short
-        format.timeStyle = .short
-        self.time = format.string(from: date)
-
-    }
-
-    // Method to pass the current date to the LibraryHours method
-   func todaysDate() -> String {
-
-        let date = Date()
-        let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd"
-        let time = format.string(from: date)
-        return time
-
-    }
    
    // Method to get the list of library resources
    func getResourceList() {
@@ -360,13 +337,29 @@ class AppLogic: ObservableObject {
                 do {
 
                 //Decode JSON data
-                  let libraryReservations: LibraryReservation = try! JSONDecoder().decode(LibraryReservation.self, from: data)
+              
+                    
+                    //    let libraryReservations: LibraryReservation = try! JSONDecoder().decode(LibraryReservation.self, from: data)
+                    
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .formatted(DateFormatter.customDate)
+              
+                //    let formatter = DateFormatter()
+                //    formatter.dateFormat = "y-MM-dd hh:mm:ss"
+                //    let decoder = JSONDecoder()
+                 ///   decoder.dataDecodingStrategy = .formatted(DateFormatter.formatter)
+                    let libraryReservations: LibraryReservation = try! decoder.decode(LibraryReservation.self, from: data)
+                    
+                    
+             //   let libraryReservations: LibraryReservation = try! decoder.decode(LibraryReservation.self, from: data)
+                    
                 
                 //Get back to the main queue so we can publish our observable variables to view
                 DispatchQueue.main.async {
                     
                   // No errors to report
-                  self.libraryReservation = libraryReservations
+             //     self.libraryReservation = libraryReservations
+                    print(libraryReservations)
                         
                     }
                     
@@ -376,4 +369,49 @@ class AppLogic: ObservableObject {
                     
                 }.resume()
       }
+
+
+    // Both these methods could go in a separate time file and sit in a struct for modularity.
+
+       // Method to get the current time and store it as a published var
+    func lastApiTime() {
+
+           let date = Date()
+           let format = DateFormatter()
+           //  format.dateStyle = .short
+           format.timeStyle = .short
+           self.time = format.string(from: date)
+
+       }
+
+       // Method to pass the current date to the LibraryHours method
+      func todaysDate() -> String {
+
+           let date = Date()
+           let format = DateFormatter()
+           format.dateFormat = "yyyy-MM-dd"
+           let time = format.string(from: date)
+           return time
+
+       }
 }
+
+
+
+extension DateFormatter {
+  static let customDate: DateFormatter = {
+    let formatter = DateFormatter()
+  //  formatter.dateFormat = "y-MM-dd hh:mm:ss"
+      formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+  //  formatter.dateStyle = .long
+  //  formatter.timeStyle = .medium
+    
+   // let stringDay = formatter.string(from: Date())
+   // print(stringDay)
+ 
+    return formatter
+    
+  }()
+}
+

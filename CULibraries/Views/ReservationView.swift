@@ -32,7 +32,7 @@ struct ReservationView: View {
 
     var body: some View {
         VStack {
-
+/*
             HStack{
                 Spacer()
                 Text(self.name)
@@ -49,15 +49,15 @@ struct ReservationView: View {
 
             List(applogic.libraryReservation) { item in
             HStack {
-                Text(item.startDate)
+                Text("\(item.startDate)")
                 .font(.body)
                 .frame(alignment: .leading)
 
                 Spacer()
-                Text(item.endDate)
+                Text("\(item.endDate)")
                 .font(.body)
             }
-            }
+            } */
                 Spacer()
         }.onAppear {
             self.applogic.getReservation(resourceID: self.resourceID, scheduleID: self.scheduleID)
