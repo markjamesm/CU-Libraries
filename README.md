@@ -21,6 +21,5 @@ CU Libraries is actively being developed and is always looking for additional co
 * Display library resource availabilities for a given time.
 
 ## Screenshots
-![Screen Shot 2020-02-23 at 9 51 00 AM](https://user-images.githubusercontent.com/20845425/75114187-002c4700-5622-11ea-99a2-3c853b534e40.png)
-![Screen Shot 2020-02-21 at 5 51 54 PM](https://user-images.githubusercontent.com/20845425/75078147-db758980-54d2-11ea-9110-26cea3062be2.png)
-![Screen Shot 2020-02-21 at 5 49 27 PM](https://user-images.githubusercontent.com/20845425/75078045-83d71e00-54d2-11ea-966a-6e1af8c4296c.png)
+<img src="https://user-images.githubusercontent.com/20845425/75114187-002c4700-5622-11ea-99a2-3c853b534e40.png" width="300"/> <img src="https://user-images.githubusercontent.com/20845425/75078147-db758980-54d2-11ea-9110-26cea3062be2.png" width="300"/> <img src="https://user-images.githubusercontent.com/20845425/75078045-83d71e00-54d2-11ea-966a-6e1af8c4296c.png" width="300"/>
+

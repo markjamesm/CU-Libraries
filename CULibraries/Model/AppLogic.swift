@@ -94,7 +94,6 @@ class AppLogic: ObservableObject {
             self.websterOccupancy = libraryData?.webster.occupancy ?? "0"
             let websterA = self.websterOccupancy.components(separatedBy: ".")
             let websterInt = Int(websterA[0]) ?? 0
-           // let websterInt = -10
 
             // Check to see if the occupancy is positive. If not display zero and a message.
             if self.isOccupancyPositive(occupancy: websterInt) == true {
@@ -119,16 +118,14 @@ class AppLogic: ObservableObject {
             if self.isOccupancyPositive(occupancy: vanierInt) == false {
                 self.vanierOccupancyError = "Insufficient data to provide Vanier library occupancy. Please try again later."
                 self.vanierOccupancyInt = 0
-
             }
 
             // This case is when both libraries have occupancy data < 0
-            if  self.isOccupancyPositive(occupancy: vanierInt) == false && self.isOccupancyPositive(occupancy: vanierInt) == false {
+            if  self.isOccupancyPositive(occupancy: websterInt) == false && self.isOccupancyPositive(occupancy: vanierInt) == false {
                 self.websterOccupancyError = "Insufficient data to provide library occupancies. Please try again later."
                 self.websterOccupancyInt = 0
                 self.vanierOccupancyInt = 0
                 self.vanierOccupancyError = " "
-
             }
 
             // Grey Nuns occupancy, not used for now.
