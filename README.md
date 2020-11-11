@@ -4,9 +4,7 @@
 
 CU Libraries is an open source iOS app to check the status of various resources at the Concordia University libraries in Montreal, Quebec. Built using SwiftUI and the [Concordia University Open Data API](https://github.com/opendataConcordiaU/documentation). 
 
-__Available now on the [App Store!](https://apps.apple.com/app/id1500109652)__
-
-CU Libraries is actively being developed and is always looking for additional contributors. Please refer to the [issues page](https://github.com/markjamesm/CU-Libraries/issues) to see a list of ongoing projects.
+Note: CU Libraries was available on the App Store until November 2020. Unfortunately, due to the pandemic, several of the Concordia APIs are no longer working properly, disabling most of the app's functionality. See <a href="https://github.com/opendataConcordiaU/documentation/issues/10" target="_blank">this ticket on Github</a> for more information. 
 
 ## Features
 
